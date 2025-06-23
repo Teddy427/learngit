@@ -7,9 +7,21 @@ git log : query the history of 'commit'
 git reset <status> <version> : reset the HEAD pointer
 <status> : --hard/--soft/--mixed -> committed / uncommitted / unadded
 <version> : HEAD^/HEAD^n/commit id -> to previous version / to previous n-th version / to the version with given id
+EXAMPLE: git reset --hard HEAD^
 git reflog : query the history of command
 git checkout -- <file name> : return this file to the state of the last 'add' and 'commit'
 git reset HEAD <file name> : cancel the updates in stage to the workspace
 git rm <file name> : delete the file in the workspace and add this 'delete' to the stage
-git remote add origin git@github.com:<user name>/<repository name>.git : associate the local git with this remote git named "origin"
+
+git remote add origin git@<server name>:<path>/<repo name>.git : associate the local git with this remote git named "origin"
+EXAMPLE: git remote add origin git@github.com:Teddy427/learngit.git
 git push (-u for the first time) origin master : push the files in the local git to the remote git "origin"
+git remove rm origin : disconnect from the remote git "origin"
+git clone git@<server name>:<path>/<repo name>.git
+
+git branch <branch name> : create this branch
+git checkout <branch name> OR git switch <branch name> : switch to this branch
+git checkout -b <branch name> OR git switch -c <branch name>: create and switch to this branch
+git branch : query the branches now
+git branch -d <branch name> : delete this branch
+git merge <branch name> : merge this branch to the branch now
