@@ -25,3 +25,9 @@ git checkout -b <branch name> OR git switch -c <branch name>: create and switch 
 git branch : query the branches now
 git branch -d <branch name> : delete this branch
 git merge <branch name> : merge this branch to the branch now
+git merge --no-ff -m "message" <branch name> : merge this branch to the branch now and create a new update to commit
+git stash : unloading the updates in workspace and stage into stash
+git stash list : query the stash now
+git stash apply/drop <stash id> : apply/delete this stash (apply/delete all stashes if do not input id)
+git stash pop : apply and delete the last stash
+git cherry-pick <commit id> : copy this commit to the branch now
