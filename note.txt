@@ -4,6 +4,7 @@ git commit -m "message" : submit all the updates of files to the git and add a d
 git status : query the status of git
 git diff <file name> : query the difference between the file in workspace and the file in git
 git log : query the history of 'commit'
+git log --pretty=oneline --abbrev-commit : query the history of 'commit' with shorter information
 git reset <status> <version> : reset the HEAD pointer
 <status> : --hard/--soft/--mixed -> committed / uncommitted / unadded
 <version> : HEAD^/HEAD^n/commit id -> to previous version / to previous n-th version / to the version with given id
@@ -15,15 +16,18 @@ git rm <file name> : delete the file in the workspace and add this 'delete' to t
 
 git remote add origin git@<server name>:<path>/<repo name>.git : associate the local git with this remote git named "origin"
 EXAMPLE: git remote add origin git@github.com:Teddy427/learngit.git
+git remote -v : query the information for the remote git
 git push (-u for the first time) origin master : push the files in the local git to the remote git "origin"
 git remove rm origin : disconnect from the remote git "origin"
-git clone git@<server name>:<path>/<repo name>.git
+git clone git@<server name>:<path>/<repo name>.git : clone the remote git to local
 
 git branch <branch name> : create this branch
 git checkout <branch name> OR git switch <branch name> : switch to this branch
 git checkout -b <branch name> OR git switch -c <branch name>: create and switch to this branch
+git checkout -b dev origin/dev : create and switch to the branch "dev" with files and codes in the branch "dev" of the remote git "origin"
 git branch : query the branches now
 git branch -d <branch name> : delete this branch
+git branch -D <branch name> : force delete this branch
 git merge <branch name> : merge this branch to the branch now
 git merge --no-ff -m "message" <branch name> : merge this branch to the branch now and create a new update to commit
 git stash : unloading the updates in workspace and stage into stash
@@ -31,3 +35,15 @@ git stash list : query the stash now
 git stash apply/drop <stash id> : apply/delete this stash (apply/delete all stashes if do not input id)
 git stash pop : apply and delete the last stash
 git cherry-pick <commit id> : copy this commit to the branch now
+git branch --set-upstream-to=origin/dev dev : set the connection between "dev" and "origin/dev"
+git pull : get the newest commit from the remote commit
+git rebase : make the history of commit to a line
+
+git tag <tag name> <commit id> : create a tag on this commit (on the last commit without input id)
+git tag -a <tag name> -m "message" <commit id> : create a tag with name and description
+git tag -d <tag name> : delete this tag
+git tag : query all tags now
+git show <tag name> : query the information of this tag
+git push origin <tagname> : push this tag to the remote git "origin"
+git push origin --tags : push all the tags to "origin"
+git push origin :/refs/tags/<tag name> : delete this tag in "origin"
