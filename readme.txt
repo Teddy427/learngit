@@ -1,1 +1,1 @@
-This is Irressay's GIT learning note.
+This is Irressay's Git learing note.
