@@ -47,3 +47,10 @@ git show <tag name> : query the information of this tag
 git push origin <tagname> : push this tag to the remote git "origin"
 git push origin --tags : push all the tags to "origin"
 git push origin :/refs/tags/<tag name> : delete this tag in "origin"
+
+git config --global color.ui true : color the output of git
+write '.gitignore' file to ignore the files you do not want to git to manage
+git add -f <file name> : add this file's update forcibly (ignore '.gitignore')
+git config --global alias.<alternative name> '<some words>' : use the alternative name to replace it
+EXAMPLE: git config --global alias.co commit
+then if you want to commit, you just need to: git co -m "blabla.."
